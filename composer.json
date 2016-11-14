@@ -1,18 +1,18 @@
 {
-    "name": "Frantz/Follow",
+    "name": "frantz/follow",
     "type": "library",
     "description": ":package_description",
     "keywords": [
         "Frantz",
         "Follow"
     ],
-    "homepage": "https://github.com/Frantz/Follow",
+    "homepage": "https://github.com/kati-frantz/follow",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "kati frantz",
+            "email": "maitrefrantzv@gmail.com",
+            "homepage": " ",
             "role": "Developer"
         }
     ],
