@@ -4,7 +4,10 @@
     "description": ":package_description",
     "keywords": [
         "Frantz",
-        "Follow"
+        "Follow",
+        "Twitter-like",
+        "User-follow",
+        "laravel 5"
     ],
     "homepage": "https://github.com/kati-frantz/follow",
     "license": "MIT",
@@ -12,7 +15,7 @@
         {
             "name": "kati frantz",
             "email": "maitrefrantzv@gmail.com",
-            "homepage": " ",
+            "homepage": "https://github.com/kati-frantz",
             "role": "Developer"
         }
     ],
