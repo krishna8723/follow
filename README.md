@@ -1,70 +1,101 @@
-# :package_name
+# Laravel 5 - Twitter-Like-Following
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Latest Version on Packagist][ico-version]][https://packagist.org/packages/frantz/follow]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
+[![Total Downloads][ico-downloads]][https://packagist.org/packages/frantz/follow]
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:vendor``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+This is an easy and simple package to implement twitter-like-following in laravel 5 applications.  
 
-## Install
+##Users can : 
+-Follow each other
+-Unfollow each other
 
-Via Composer
+## Installation
 
-``` bash
-$ composer require :vendor/:package_name
-```
-
-## Usage
-
-``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
-```
-
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Testing
+1 - Require Via Composer
 
 ``` bash
-$ composer test
+$ composer require frantz/follow
 ```
 
-## Contributing
+2 - Add service provider to the providers' array `config\app.php` file.
+```php
+providers = [
+	...
+	Frantz\Follow\FollowServiceProvider::class,
+	...
+];
+```
+3 - Add the trait to your `User.php` class :
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+```php
+<?php
+namespace App;
 
-## Security
+use Frantz\Follow\Traits\FollowTrait;
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+class User extends Authenticateble
+{
+	use FollowTrait;
+}
+```
+4 - Finally, migrate to database ( This automatically migrates a migration file that creates a 'follows' table ):
+
+```bash
+php artisan migrate
+```
+
+## Available Methods
+
+##Follow a user - Method returns (bool)true .
+```php
+$user->follow();
+```
+##Unfollow a user - Method returns (bool)true .
+```php
+$user->follow();
+```
+##Get all users following $user - Method returns a collection of user models .
+```php
+$user->all_followers();
+```
+##Get all users $user is following - Method returns a collection of user models .
+```php
+$user->all_following();
+```
+##Get an array of all user ids following $user - Method returns an array of integers .
+```php
+$user->all_followers_ids();
+```
+##Get an array of all user ids $user is following - Method returns an array of integers .
+```php
+$user->all_following_ids();
+```
+##- Check if $user is following a user with id = $userId - Method returns ( bool ) true or false.
+```php
+$user->is_following($userId);
+```
+##- Check if $user is followed by user with id = $userId - Method returns ( bool ) true or false.
+```php
+$user->is_followed_by($userId);
+```
+##- Get number of followers of $user - Method returns integer.
+```php
+$user->all_followers_count();
+```
+##- Get number of users $user is following - Method returns integer.
+```php
+$user->all_following_count();
+```
+
+
+
 
 ## Credits
 
-- [:author_name][link-author]
-- [All Contributors][link-contributors]
+- [:author_name][katifrantz.me]
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/:vendor/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/:vendor/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/:vendor/:package_name
-[link-travis]: https://travis-ci.org/:vendor/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
-[link-downloads]: https://packagist.org/packages/:vendor/:package_name
-[link-author]: https://github.com/:author_username
-[link-contributors]: ../../contributors
