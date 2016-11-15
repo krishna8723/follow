@@ -1,10 +1,5 @@
 # Laravel 5 - Twitter-Like-Following
 
-[![Latest Version on Packagist][ico-version]](https://packagist.org/packages/frantz/follow)
-[![Software License][ico-license]](LICENSE.md)
-[![Total Downloads][ico-downloads]](https://packagist.org/packages/frantz/follow)
-
-
 This is an easy and simple package to implement twitter-like-following in laravel 5 applications.  
 
 ## Installation
@@ -90,7 +85,7 @@ $user->all_following_count();
 
 ## Credits
 
-- [Frantz-Vallie](katifrantz.me)
+- Frantz-Vallie
 
 ## License
 
