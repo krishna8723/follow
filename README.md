@@ -1,25 +1,21 @@
 # Laravel 5 - Twitter-Like-Following
 
-[![Latest Version on Packagist][ico-version]][https://packagist.org/packages/frantz/follow]
+[![Latest Version on Packagist][ico-version]](https://packagist.org/packages/frantz/follow)
 [![Software License][ico-license]](LICENSE.md)
-[![Total Downloads][ico-downloads]][https://packagist.org/packages/frantz/follow]
+[![Total Downloads][ico-downloads]](https://packagist.org/packages/frantz/follow)
 
 
 This is an easy and simple package to implement twitter-like-following in laravel 5 applications.  
-
-##Users can : 
--Follow each other
--Unfollow each other
 
 ## Installation
 
 1 - Require Via Composer
 
 ``` bash
-$ composer require frantz/follow
+ composer require frantz/follow
 ```
 
-2 - Add service provider to the providers' array `config\app.php` file.
+2 - Add service provider to the providers' array in the `config\app.php` file.
 ```php
 providers = [
 	...
@@ -48,43 +44,43 @@ php artisan migrate
 
 ## Available Methods
 
-##Follow a user - Method returns (bool)true .
+####Follow a user - Method returns (bool)true .
 ```php
 $user->follow();
 ```
-##Unfollow a user - Method returns (bool)true .
+####Unfollow a user - Method returns (bool)true .
 ```php
-$user->follow();
+$user->unfollow();
 ```
-##Get all users following $user - Method returns a collection of user models .
+####Get all users following `$user` - Method returns a collection of user models .
 ```php
 $user->all_followers();
 ```
-##Get all users $user is following - Method returns a collection of user models .
+####Get all users `$user` is following - Method returns a collection of user models .
 ```php
 $user->all_following();
 ```
-##Get an array of all user ids following $user - Method returns an array of integers .
+####Get an array of all user ids following `$user` - Method returns an array of integers .
 ```php
 $user->all_followers_ids();
 ```
-##Get an array of all user ids $user is following - Method returns an array of integers .
+####Get an array of all user ids `$user` is following - Method returns an array of integers .
 ```php
 $user->all_following_ids();
 ```
-##- Check if $user is following a user with id = $userId - Method returns ( bool ) true or false.
+####- Check if `$user` is following a user with id = $userId - Method returns ( bool ) true or false.
 ```php
 $user->is_following($userId);
 ```
-##- Check if $user is followed by user with id = $userId - Method returns ( bool ) true or false.
+####- Check if `$user` is followed by user with id = $userId - Method returns ( bool ) true or false.
 ```php
 $user->is_followed_by($userId);
 ```
-##- Get number of followers of $user - Method returns integer.
+####- Get number of followers of `$user` - Method returns integer.
 ```php
 $user->all_followers_count();
 ```
-##- Get number of users $user is following - Method returns integer.
+####- Get number of users `$user` is following - Method returns integer.
 ```php
 $user->all_following_count();
 ```
@@ -94,7 +90,7 @@ $user->all_following_count();
 
 ## Credits
 
-- [:author_name][katifrantz.me]
+- [Frantz-Vallie](katifrantz.me)
 
 ## License
 
